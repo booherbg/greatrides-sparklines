@@ -27,6 +27,7 @@ stationColors = {
 
 // ndsu filter
 filter_indexes = [0, 1, 2, 3, 6, 8];
+filter_indexes2 = [4, 5, 7, 9, 10, 11];
 
 weeklyColors = ["#3C8642", "#3C873D", "#3E883B", "#43893B", "#488A3B", "#4D8B3B", "#528C3B", "#578E3B", "#5D8F3B", "#62903B", "#68913B", "#6E923B", "#74933B", "#7A943B", "#80963B", "#86973B", "#8D983B", "#93993A", "#9A9A3A", "#9B953A", "#9C903A", "#9E8B3A", "#9F863A", "#A08139", "#A17B39", "#A27639", "#A37039", "#A46A39", "#A66438", "#A75D38", "#A85738", "#A95038", "#AA4937", "#AB4237", "#AC3B37", "#AE3739"];
 buildDashboard = function() {
@@ -123,10 +124,9 @@ buildDashboard = function() {
       total_week_out = total_week_out + math.sum(data_set);
 
       if (i % 7 == 0) {
-         // pop on the end of the row bullet graph
-
+         // pop on the end of the row bar graph
          width = 150 * (total_week_out / max_val);
-         bullet = $("<span class='spark week-summary'><span style='width: " + width + "'></span>");
+         bullet = $("<span class='spark week-summary'><span class='bar-text'>" + total_week_out + "</span><span class='bar' style='width: " + width + "'></span>");
          $("#dashboard .week:last").append(bullet);
       }
    });

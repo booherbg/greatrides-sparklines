@@ -23,13 +23,24 @@
 .week-summary {
    display: inline-block;
    width: 15px;
+   position: relative;
+   padding-top: 8px;
 }
 
-.week-summary span:first-child {
+.week-summary .bar {
    position: absolute;
    bottom: 0px;
+   left: 23px;
    height: 10px;
-   background-color: #ddd;
+   margin-left: 14px;
+   background-color: #eee;
+   background-image: linear-gradient(90deg, transparent 50%, rgba(26, 75, 132, 1) 50%);
+   background-size: 5px 5px;
+}
+
+.week-summary .bar-text {
+   font-size: 10px;
+   display: inline-block;
    margin-left: 10px;
 }
 
@@ -38,4 +49,12 @@
 }
 #controls input {
    width: 10px;
+}
+
+#controls img {
+   width: 500px;
+   margin-left: 75px;
+   margin-top: 3px;
+   position: relative;
+   bottom: -2px;
 }
