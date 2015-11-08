@@ -38,9 +38,11 @@ buildDashboard = function() {
       $("#dashboard .week:last").append(obj);
 
       // draw and set up the sparklines
-      $(obj).sparkline(row.totals_in, {type: 'bar', barColor: weeklyColors[w]});
+      //data_set = row.stations_in[10];
+      data_set = row.totals_in;
+      $(obj).sparkline(data_set, {type: 'bar', barColor: weeklyColors[w]});
       i++;
-      total_week_out = total_week_out + math.sum(row.totals_in);
+      total_week_out = total_week_out + math.sum(data_set);
 
       if (i % 7 == 0) {
          // pop on the end of the row bullet graph
