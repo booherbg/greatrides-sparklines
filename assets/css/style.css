@@ -32,3 +32,10 @@
    background-color: #ddd;
    margin-left: 10px;
 }
+
+#controls {
+   font-size: 10px;
+}
+#controls input {
+   width: 10px;
+}

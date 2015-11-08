@@ -15,7 +15,9 @@ bikes = defaultdict(int)
 #['Student', '2376', 'University Village', 'Wallman Wellness Center', '2015-06-11', '2015-06-11', '12:46:54', '12:55:33']
 
 # hard coded, for now
-stations = ['Barry Hall', 'Fercho YMCA', 'Great Northern Bicycle Co.', 'High Rise Complex', 'MATBUS Center Downtown', 'Memorial Union', 'Renaissance Hall', 'Sanford Medical Center', 'US Bank Plaza', 'University Village', 'Wallman Wellness Center']
+stations = ['University Village', 'High Rise Complex', 'Wallman Wellness Center', 'Memorial Union',
+'Sanford Medical Center', 'Great Northern Bicycle Co.',
+'Barry Hall', 'US Bank Plaza',  'Renaissance Hall',  'MATBUS Center Downtown',  'Fercho YMCA']
 
 def fillMissingDates(trips):
     '''
@@ -55,7 +57,8 @@ def initDict(key, trips):
             'checkins_sum': 0, 'checkouts_sum': 0,
             'totals_out': [0]*24, 'totals_in': [0]*24,
             # have to get tricky with xrange so that we dont accidentally copy the same instance 11 times
-            'stations_in': [[0]*24 for _ in xrange(11)], 'stations_out': [[0]*24 for _ in xrange(11)]
+            'stations_in': [[0]*24 for _ in xrange(len(stations))], 'stations_out': [[0]*24 for _ in xrange(len(stations))],
+            'stacked_in': [[0]*len(stations) for _ in xrange(24)], 'stacked_out': [[0]*len(stations) for _ in xrange(24)]
         }
 with open('season-data-2015.csv') as csvfile:
     reader = csv.reader(csvfile)
@@ -97,9 +100,12 @@ with open('season-data-2015.csv') as csvfile:
         index_in = int(row[7].split(':')[0])
         trips[row[5]]['totals_in'][index_in] += 1
 
-        # check this when not tired
         trips[row[4]]['stations_out'][stations.index(row[2])][index_out] += 1
         trips[row[5]]['stations_in'][stations.index(row[3])][index_in] += 1
+
+        # what about transposing station info so that they're grouped?
+        trips[row[4]]['stacked_out'][index_out][stations.index(row[2])] += 1
+        trips[row[5]]['stacked_in'][index_in][stations.index(row[3])] += 1
 
 print len(trips.keys())
 trips = fillMissingDates(trips)
