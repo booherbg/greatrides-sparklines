@@ -54,7 +54,7 @@ def initDict(key, trips):
             'date': key,
             'checkins_sum': 0, 'checkouts_sum': 0,
             'totals_out': [0]*24, 'totals_in': [0]*24,
-            'stations_in': [], 'stations_out': []
+            'stations_in': [[0]*24]*11, 'stations_out': [[0]*24]*11
         }
 with open('season-data-2015.csv') as csvfile:
     reader = csv.reader(csvfile)
@@ -94,6 +94,10 @@ with open('season-data-2015.csv') as csvfile:
 
         index_in = int(row[7].split(':')[0])
         trips[row[5]]['totals_in'][index_in] += 1
+
+        # check this when not tired
+        trips[row[4]]['stations_in'][stations.index(row[2])][index_out] += 1
+        trips[row[5]]['stations_out'][stations.index(row[3])][index_in] += 1
 
 print len(trips.keys())
 trips = fillMissingDates(trips)
