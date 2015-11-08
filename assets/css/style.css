@@ -1,0 +1,35 @@
+.spark canvas {
+}
+
+.date-label {
+   display: inline-block;
+   font-size: 10px;
+   width: 60px;
+}
+
+.date-label span {
+   position: absolute;
+   bottom: 0px;
+}
+
+.week {
+   position: relative;
+   cursor: pointer;
+}
+
+.week:hover {
+   background-color: #eee;
+}
+
+.week-summary {
+   display: inline-block;
+   width: 15px;
+}
+
+.week-summary span:first-child {
+   position: absolute;
+   bottom: 0px;
+   height: 10px;
+   background-color: #ddd;
+   margin-left: 10px;
+}
