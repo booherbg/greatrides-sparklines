@@ -1,3 +1,9 @@
+/*
+   It's simple jquery, but it works. It won't scale with more complex components, but for a prototype its perfect.
+
+   Blaine Booher, 11.07.2015
+*/
+
 var tripsData;
 var originalTripsData;
 /* {
@@ -6,8 +12,7 @@ var originalTripsData;
 "totals_in": [0, ...], "totals_out": [0, 0, ...]
 }
 */
-// NDSU: Barry Hall, High Rise Complex, Memorial Union, Rennaisance Hall, University Village, Wallman Wellness Center
-// NDSU: 0, 3, 5, 6, 9, 10
+
 stations = ['University Village', 'High Rise Complex', 'Wallman Wellness Center', 'Memorial Union',
 'Sanford Medical Center', 'Great Northern Bicycle Co.', 'Barry Hall', 'US Bank Plaza',  'Renaissance Hall',  
 'MATBUS Center Downtown',  'Fercho YMCA'];
@@ -27,7 +32,6 @@ stationColors = {
 
 // ndsu filter
 filter_indexes = [0, 1, 2, 3, 6, 8];
-filter_indexes2 = [4, 5, 7, 9, 10, 11];
 
 weeklyColors = ["#3C8642", "#3C873D", "#3E883B", "#43893B", "#488A3B", "#4D8B3B", "#528C3B", "#578E3B", "#5D8F3B", "#62903B", "#68913B", "#6E923B", "#74933B", "#7A943B", "#80963B", "#86973B", "#8D983B", "#93993A", "#9A9A3A", "#9B953A", "#9C903A", "#9E8B3A", "#9F863A", "#A08139", "#A17B39", "#A27639", "#A37039", "#A46A39", "#A66438", "#A75D38", "#A85738", "#A95038", "#AA4937", "#AB4237", "#AC3B37", "#AE3739"];
 buildDashboard = function() {
