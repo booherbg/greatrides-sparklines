@@ -1,12 +1,12 @@
 # Great Rides Bike Share Sparklines Project
 
 This project was created by Blaine Booher and Matt Nohr as part of the Hack Fargo Visualization Hackathon on Nov 708 2015. We ended up taking third place :)
-See the [https://rawgit.com/booherbg/greatrides-sparklines/master/index.html](Online Demo) which is hosted through a proxy that links directly to this github repo.
+See the [Online Demo](https://rawgit.com/booherbg/greatrides-sparklines/master/index.html) which is hosted through a proxy that links directly to this github repo.
 
 The Great Rides Bike Share program in Fargo, ND launched in Spring 2015, and became the most successful program 
 in the country by volume. This dataset was provided by GRBS and represents over 143k rides over the entire 8 month season.
 
-We chose to explore the entire season of data through the use of the visualization technique known as (http://www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg_id=0001OR&topic_id=1)[Sparklines]
+We chose to explore the entire season of data through the use of the visualization technique known as [Sparklines](http://www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg_id=0001OR&topic_id=1)
 "A sparkline is a small intense, simple, word-sized graphic with typographic resolution".
 
 Running this app locally
