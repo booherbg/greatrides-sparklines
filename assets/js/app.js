@@ -129,7 +129,6 @@ buildDashboard = function() {
                offset = c[i].offset;
                value = c[i].value;
                if (value > 0) {
-                  alert(color);
                   s += "<span style=\"color: " + color + "\">&#9679;</span> (" + value + ") " + stationColors[color] + "<br/>";
                }
                total += value;
