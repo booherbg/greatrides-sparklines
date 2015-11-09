@@ -49,6 +49,7 @@
 }
 #controls input {
    width: 10px;
+   margin-bottom: 10px;
 }
 
 #controls img {
