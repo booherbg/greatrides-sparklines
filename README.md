@@ -21,3 +21,5 @@ $ python -m SimpleHTTPServer
 The scripts/ folder contains stats.py, which computes the json based on aggregate statistical data. It's easier to pre-compute and regenerate the json file rather than muck around on the client side. It also does things like fill in missing dates and concatenate similar station names into the same entry.
 
 Check back soon for updates. I intend to keep this project active as an exploratory venture in visualization.
+
+Tech used: javascript, python, vanilla css. Moment.js, jquery, jquery.sparklines
