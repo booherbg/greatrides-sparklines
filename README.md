@@ -7,7 +7,7 @@ The Great Rides Bike Share program in Fargo, ND launched in Spring 2015, and bec
 in the country by volume. This dataset was provided by GRBS and represents over 143k rides over the entire 8 month season.
 
 We chose to explore the entire season of data through the use of the visualization technique known as [Sparklines](http://www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg_id=0001OR&topic_id=1)
-"A sparkline is a small intense, simple, word-sized graphic with typographic resolution".
+. "A sparkline is a small intense, simple, word-sized graphic with typographic resolution".
 
 Running this app locally
 ------------------------
@@ -18,8 +18,10 @@ I'd recommend serving via an http server, rather than opening it locally (to mak
 $ python -m SimpleHTTPServer
 ```
 
-The scripts/ folder contains stats.py, which computes the json based on aggregate statistical data. It's easier to pre-compute and regenerate the json file rather than muck around on the client side. It also does things like fill in missing dates and concatenate similar station names into the same entry.
+The scripts/ folder contains stats.py, which computes the json based on aggregate statistical data. It's easier to pre-compute and regenerate the json file rather than muck around on the client side. It also does things like fill in missing dates and concatenate similar station names into the same entry. This is also important for the design process because it forces you to think about your data and 
+representation separately. I find that designing the data structure first helps keep the mental process clear and nimble. It also
+let's us represent the data in a format to be "readily consumed" by the view, which keeps complexity to a minimum.
 
 Check back soon for updates. I intend to keep this project active as an exploratory venture in visualization.
 
-Tech used: javascript, python, vanilla css. Moment.js, jquery, jquery.sparklines
+Tech used: javascript, python, vanilla css. Moment.js, jquery, jquery.sparklines, math.js
