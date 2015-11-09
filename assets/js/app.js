@@ -57,17 +57,23 @@ buildDashboard = function() {
          if ($('#chk-stations').is(':checked')) {
             data_set = row.stacked_out;
             graph_type = 'stacked'
+
+            // enable the ndsu radio buttons
+            $('#controls input[name=stationType]').prop('disabled', false);
          } else {
             data_set = row.totals_out;
             graph_type = 'bar';
+            $('#controls input[name=stationType]').prop('disabled', true);
          }
       } else {
          if ($('#chk-stations').is(':checked')) {
             data_set = row.stacked_in;
             graph_type = 'stacked';
+            $('#controls input[name=stationType]').prop('disabled', false);
          } else {
             data_set = row.totals_in;
             graph_type = 'bar';
+            $('#controls input[name=stationType]').prop('disabled', true);
          }
       }
 
@@ -86,11 +92,23 @@ buildDashboard = function() {
          }
       }
 
+      if ($('#controls input[name=dataSize]:checked').val() == "small") {
+         barHeight = '20px';
+         barWidth = '5px';
+      } else if ($('#controls input[name=dataSize]:checked').val() == "medium") {
+         barHeight = '80px';
+         barWidth = '5px';
+      } else if ($('#controls input[name=dataSize]:checked').val() == "large") {
+         barHeight = '300px';
+         barWidth = '10px';
+      }
+
       $(obj).sparkline(data_set, {
          type: 'bar', 
          barColor: weeklyColors[w],
-         barWidth: '5px',
+         barWidth: barWidth,
          barSpacing: '1px',
+         height: barHeight,
          tooltipValueLookups: {
             'stations': stations
          },

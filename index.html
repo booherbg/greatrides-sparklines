@@ -1,12 +1,12 @@
 
 <html>
 <head>
-   <title>Great Rides Sparkline Dashboard | Blaine Booher &amp; Matt Nohr</title>
+   <title>Great Rides Sparkline Dashboard</title>
    <link rel="stylesheet" href="/assets/css/style.css">
    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/2.4.1/math.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-   <script src="/assets/js/jquery.sparkline.js"></script>
+   <script src="assets/js/jquery.sparkline.js"></script>
 </head>
 <body>
 
@@ -14,14 +14,18 @@
       <input type="radio" name="dataType" value="checkin" checked/> Checkouts
       <input type="radio" name="dataType" value="checkout" /> Checkins
       <input type="checkbox" id="chk-stations"> Show Stations Details
-      <input type="radio" name="stationType" value="everyone" checked/> Show All Stations
-      <input type="radio" name="stationType" value="no_ndsu" /> Exclude NDSU Stations
-      <img src="/assets/images/station-legend.jpg" />
+      <input type="radio" name="stationType" value="everyone" disabled checked/> Show All Stations
+      <input type="radio" name="stationType" value="no_ndsu" disabled /> Exclude NDSU Stations
+      <img src="assets/images/station-legend.jpg" /> <br/>
+
+      <input type="radio" name="dataSize" value="small" checked/> Small
+      <input type="radio" name="dataSize" value="medium" /> Medium
+      <input type="radio" name="dataSize" value="large" /> Large
    </div>
    <div id="dashboard">
       <span class="spark bar"></span>
       <span class="spark line"></span>
    </div>
-   <script src="/assets/js/app.js"></script>
+   <script src="assets/js/app.js"></script>
 </body>
 </html>

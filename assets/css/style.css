@@ -14,10 +14,11 @@
 .week {
    position: relative;
    cursor: pointer;
+   white-space: nowrap;
 }
 
 .week:hover {
-   background-color: #eee;
+   /* background-color: #eee; */
 }
 
 .week-summary {
@@ -46,6 +47,7 @@
 
 #controls {
    font-size: 10px;
+   border-bottom: 1px solid black;
 }
 #controls input {
    width: 10px;
